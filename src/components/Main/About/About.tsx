@@ -1,5 +1,6 @@
-import { Box, Chip, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import inseop from "@/assets/img/inseop1.jpeg";
+import { Chip } from "@/components/Common/Chip";
 
 export function About() {
   return (
@@ -9,13 +10,7 @@ export function About() {
       sx={(theme) => ({ bgcolor: theme.color["background-color-03"] })}
     >
       <Stack alignItems="center">
-        <Chip
-          label="About me"
-          sx={(theme) => ({
-            bgcolor: theme.color["background-color-02"],
-            width: 105,
-          })}
-        />
+        <Chip label="About me" />
       </Stack>
       <Stack direction={{ xs: "column", md: "row" }}>
         <Stack
