@@ -9,6 +9,7 @@ import CSS from "@/assets/img/skill/css.svg?react";
 export function Skill() {
   return (
     <Stack
+      id="skill"
       p="96px 112px"
       gap={4}
       sx={(theme) => ({

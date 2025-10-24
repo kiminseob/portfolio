@@ -17,7 +17,7 @@ import {
 import { useState } from "react";
 
 const drawerWidth = 240;
-const navItems = ["About", "Work"];
+const navItems = ["Intro", "About", "Skill", "Experience"];
 
 export function Header() {
   const { mode, setMode } = useColorScheme();
