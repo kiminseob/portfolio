@@ -10,6 +10,7 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Stack,
   Toolbar,
   Typography,
   useColorScheme,
@@ -17,7 +18,7 @@ import {
 import { useState } from "react";
 
 const drawerWidth = 240;
-const navItems = ["Intro", "About", "Skill", "Experience"];
+const navItems = ["Intro", "About", "Skill", "Experience", "Work"];
 
 export function Header() {
   const { mode, setMode } = useColorScheme();
@@ -44,12 +45,29 @@ export function Header() {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton
+              LinkComponent="a"
+              href={`#${item.toLocaleLowerCase()}`}
+            >
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
+      <Divider />
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="space-between"
+        p="0 12px"
+      >
+        <Typography sx={(theme) => ({ color: theme.color["icon-color-02"] })}>
+          Switch Theme
+        </Typography>
+        <IconButton onClick={toggleDarkMode}>
+          {mode === "dark" ? <DarkMode /> : <LightMode />}
+        </IconButton>
+      </Stack>
     </Box>
   );
 
@@ -95,7 +113,10 @@ export function Header() {
               </Button>
             ))}
           </Box>
-          <IconButton onClick={toggleDarkMode}>
+          <IconButton
+            onClick={toggleDarkMode}
+            sx={{ display: { xs: "none", sm: "block" } }}
+          >
             {mode === "dark" ? <DarkMode /> : <LightMode />}
           </IconButton>
         </Toolbar>
@@ -108,13 +129,15 @@ export function Header() {
           ModalProps={{
             keepMounted: true,
           }}
-          sx={{
+          sx={(theme) => ({
             display: { xs: "block", sm: "none" },
+
             "& .MuiDrawer-paper": {
+              bgcolor: theme.color["background-color-01"],
               boxSizing: "border-box",
               width: drawerWidth,
             },
-          }}
+          })}
         >
           {drawer}
         </Drawer>

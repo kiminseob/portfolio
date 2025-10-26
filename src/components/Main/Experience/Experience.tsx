@@ -32,7 +32,7 @@ export function Experience() {
       </Typography>
       <Stack width={{ xs: "100%", md: "896px" }} gap={5}>
         {experiences.map((experience) => (
-          <Card experience={experience} />
+          <Card key={experience.company} experience={experience} />
         ))}
       </Stack>
     </Stack>
