@@ -61,7 +61,7 @@ export function Header() {
         justifyContent="space-between"
         p="0 12px"
       >
-        <Typography sx={(theme) => ({ color: theme.color["icon-color-02"] })}>
+        <Typography sx={(theme) => ({ color: theme.color["icon-color-01"] })}>
           Switch Theme
         </Typography>
         <IconButton onClick={toggleDarkMode}>
@@ -78,10 +78,16 @@ export function Header() {
         color="transparent"
         sx={(theme) => ({
           bgcolor: theme.color["background-color-01"],
+          alignItems: "center",
           height: "68px",
         })}
       >
-        <Toolbar>
+        <Toolbar
+          sx={{
+            width: "100%",
+            maxWidth: 1280,
+          }}
+        >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -128,6 +134,19 @@ export function Header() {
           onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true,
+          }}
+          slotProps={{
+            backdrop: {
+              sx: () => ({
+                bgcolor: "rgba(255,255,255,0.1)",
+                backdropFilter: "blur(3px)",
+              }),
+            },
+            paper: {
+              sx: {
+                backgroundImage: "none",
+              },
+            },
           }}
           sx={(theme) => ({
             display: { xs: "block", sm: "none" },

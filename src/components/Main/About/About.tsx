@@ -6,13 +6,15 @@ export function About() {
   return (
     <Stack
       id="about"
-      p="96px 80px"
+      p="96px 32px 96px 64px"
+      alignItems="center"
+      gap={4}
       sx={(theme) => ({ bgcolor: theme.color["background-color-03"] })}
     >
       <Stack alignItems="center">
         <Chip label="About me" />
       </Stack>
-      <Stack direction={{ xs: "column", md: "row" }}>
+      <Stack direction={{ xs: "column", md: "row" }} maxWidth={1216} gap={4}>
         <Stack
           sx={{
             alignItems: {

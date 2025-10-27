@@ -53,7 +53,11 @@ function Card(props: CardProps) {
       p="32px"
       gap="48px"
       alignItems={{ xs: "center", md: "flex-start" }}
-      sx={(theme) => ({ bgcolor: theme.color["background-color-04"] })}
+      sx={(theme) => ({
+        bgcolor: theme.color["background-color-04"],
+        boxShadow:
+          "0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1)",
+      })}
     >
       <Box width={206}>
         <img src={TmaxsoftLogo} width="180px" />

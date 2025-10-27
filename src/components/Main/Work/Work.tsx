@@ -7,18 +7,18 @@ import {
   Typography,
   useColorScheme,
 } from "@mui/material";
-import JeusAdmin from "@/assets/img/work/jeus_admin.png";
+import { JeusPortfolio } from "./Portfolio/JeusPortfolio";
 
 const works = [
   {
-    imgSrc: JeusAdmin,
+    portfolio: <JeusPortfolio />,
     title: "JEUS Admin",
     description: "어쩌고",
     tags: ["React", "Typescript"],
     link: "https://docs.tmaxsoft.com/ko/tmaxsoft_docs/main/jeus/index_jeus_9.1.html",
   },
   {
-    imgSrc: JeusAdmin,
+    portfolio: <JeusPortfolio />,
     title: "JEUS Admin2",
     description: "어쩌고",
     tags: ["React", "Typescript"],
@@ -30,7 +30,7 @@ export function Work() {
   return (
     <Stack
       id="work"
-      p="96px 114px"
+      p="96px 0"
       gap={4}
       sx={(theme) => ({
         bgcolor: theme.color["background-color-01"],
@@ -49,7 +49,7 @@ export function Work() {
 }
 
 type CardProps = {
-  imgSrc: string;
+  portfolio: React.ReactNode;
   index: number;
   title: string;
   description: string;
@@ -57,18 +57,20 @@ type CardProps = {
   link: string;
 };
 function Card(props: CardProps) {
-  const { imgSrc, index, title, description, tags, link } = props;
+  const { portfolio, index, title, description, tags, link } = props;
   const { mode } = useColorScheme();
   const order = index % 2;
 
   return (
     <Stack
+      maxWidth={896}
       direction={{ xs: "column", md: "row" }}
       borderRadius="12px"
       overflow="hidden"
       sx={{
         ...(mode !== "dark" && {
-          filter: "drop-shadow(0px 4px 3px rgba(0,0,0,0.07000000029802322))",
+          boxShadow:
+            "0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1)",
         }),
       }}
     >
@@ -80,7 +82,7 @@ function Card(props: CardProps) {
           bgcolor: theme.color["card-color-01"],
         })}
       >
-        <img src={imgSrc} width="100%" style={{ borderRadius: "8px" }} />
+        {portfolio}
       </Box>
       <Stack
         p="48px"
