@@ -16,13 +16,20 @@ import {
   useColorScheme,
 } from "@mui/material";
 import { useState } from "react";
+import Turtle from "@/assets/animation/logo/turtle.gif";
+import Jellyfish from "@/assets/animation/logo/jellyfish.gif";
+import Elepant from "@/assets/animation/logo/elepant.gif";
+import Seagull from "@/assets/animation/logo/seagull.gif";
+import Camel from "@/assets/animation/logo/camel.gif";
 
 const drawerWidth = 240;
 const navItems = ["Intro", "About", "Skill", "Experience", "Work"];
+const logos = [Elepant, Turtle, Jellyfish, Seagull, Camel];
 
 export function Header() {
   const { mode, setMode } = useColorScheme();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [logoIdx, setLogoIdx] = useState(0);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -86,6 +93,7 @@ export function Header() {
           sx={{
             width: "100%",
             maxWidth: 1280,
+            justifyContent: "space-between",
           }}
         >
           <IconButton
@@ -97,34 +105,38 @@ export function Header() {
           >
             <Menu />
           </IconButton>
-          <Typography
-            variant="h6"
-            sx={(theme) => ({
-              color: theme.color["text-color-01"],
-              flexGrow: 1,
-              display: { xs: "none", sm: "block" },
+          <Box
+            sx={() => ({
+              display: { xs: "none", sm: "flex" },
+              cursor: "pointer",
             })}
           >
-            inseop kim
-          </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button
-                key={item}
-                sx={(theme) => ({ color: theme.color["icon-color-01"] })}
-                LinkComponent="a"
-                href={`#${item.toLocaleLowerCase()}`}
-              >
-                {item}
-              </Button>
-            ))}
+            <img
+              src={logos[logoIdx]}
+              width={50}
+              onClick={() => setLogoIdx((prev) => (prev + 1) % logos.length)}
+            />
           </Box>
-          <IconButton
-            onClick={toggleDarkMode}
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
-            {mode === "dark" ? <DarkMode /> : <LightMode />}
-          </IconButton>
+          <Stack direction="row" alignItems="center" gap={1}>
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              {navItems.map((item) => (
+                <Button
+                  key={item}
+                  sx={(theme) => ({ color: theme.color["icon-color-01"] })}
+                  LinkComponent="a"
+                  href={`#${item.toLocaleLowerCase()}`}
+                >
+                  {item}
+                </Button>
+              ))}
+            </Box>
+            <IconButton
+              onClick={toggleDarkMode}
+              sx={{ display: { xs: "none", sm: "block" }, fontSize: "unset" }}
+            >
+              {mode === "dark" ? <DarkMode /> : <LightMode />}
+            </IconButton>
+          </Stack>
         </Toolbar>
       </AppBar>
       <nav>
