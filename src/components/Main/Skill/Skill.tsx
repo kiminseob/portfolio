@@ -10,7 +10,7 @@ export function Skill() {
   return (
     <Stack
       id="skill"
-      p="96px 112px"
+      p={{ xs: "96px 24px", md: "96px 112px" }}
       gap={4}
       sx={(theme) => ({
         bgcolor: theme.color["background-color-01"],
@@ -21,7 +21,12 @@ export function Skill() {
       <Box>
         <Typography>주요 웹 기술을 능숙하게 활용합니다.</Typography>
       </Box>
-      <Stack direction="row" gap={10} flexWrap="wrap">
+      <Stack
+        direction="row"
+        gap={{ xs: 5, md: 10 }}
+        justifyContent="center"
+        flexWrap="wrap"
+      >
         <Stack alignItems="center">
           <Javascript width={64} height={64} />
           <Typography variant="body2">Javascript</Typography>

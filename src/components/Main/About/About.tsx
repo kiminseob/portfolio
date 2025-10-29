@@ -6,7 +6,7 @@ export function About() {
   return (
     <Stack
       id="about"
-      p="96px 32px 96px 64px"
+      p="96px 32px"
       alignItems="center"
       gap={4}
       sx={(theme) => ({ bgcolor: theme.color["background-color-03"] })}
@@ -14,7 +14,12 @@ export function About() {
       <Stack alignItems="center">
         <Chip label="About me" />
       </Stack>
-      <Stack direction={{ xs: "column", md: "row" }} maxWidth={1216} gap={4}>
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        maxWidth={1216}
+        gap={4}
+        justifyContent="space-between"
+      >
         <Stack
           sx={{
             alignItems: {
@@ -29,14 +34,18 @@ export function About() {
             boxSizing="content-box"
             position="relative"
             p="10px"
-            width="fit-content"
-            height={533}
-            sx={(theme) => ({ bgcolor: theme.color["background-color-03"] })}
+            width={{ xs: 346, md: 450 }}
+            height={{ xs: 395, md: 533 }}
+            sx={(theme) => ({
+              bgcolor: theme.color["background-color-03"],
+              display: "flex",
+              justifyContent: "flex-end",
+            })}
           >
             <Box
               component="img"
               src={inseop}
-              width={400}
+              width={{ xs: 296, md: 400 }}
               zIndex={1}
               position="relative"
             />
@@ -48,14 +57,16 @@ export function About() {
                 bgcolor: theme.color["background-color-02"],
                 zIndex: 0,
               })}
-              width={400}
-              height={533}
+              width={{ xs: 296, md: 400 }}
+              height={{ xs: 395, md: 533 }}
             />
           </Box>
         </Stack>
         <Stack>
           <Stack gap={2}>
-            <Typography variant="h4">김인섭, Frontend Developer</Typography>
+            <Typography variant="h4" mb={1}>
+              김인섭, Frontend Developer
+            </Typography>
             <Typography variant="body1">
               안녕하세요. 저는 2021년 8월 티맥스소프트에 입사해 프론트엔드
               개발자로 일하며, React.js와 TypeScript 기반의 Admin 페이지를

@@ -11,7 +11,7 @@ export function Intro() {
   return (
     <Stack
       id="intro"
-      p="96px 64px 96px 32px"
+      p="96px 32px"
       alignItems="center"
       justifyContent="center"
       mt="68px"
@@ -23,7 +23,7 @@ export function Intro() {
         width="100%"
         maxWidth={1216}
         direction={{ xs: "column", md: "row" }}
-        gap={4}
+        justifyContent="space-between"
       >
         <Stack
           order={{ xs: 0, md: 1 }}
@@ -38,7 +38,7 @@ export function Intro() {
         >
           <Box
             position="relative"
-            width="fit-content"
+            width={330}
             height={280}
             boxSizing="content-box"
             p="10px"
