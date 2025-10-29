@@ -1,6 +1,11 @@
 import { Box, IconButton, Stack, Typography } from "@mui/material";
 import inseop from "@/assets/img/profile.jpeg";
-import { EmailOutlined, GitHub, LocationOnOutlined } from "@mui/icons-material";
+import {
+  EmailOutlined,
+  FeedOutlined,
+  GitHub,
+  LocationOnOutlined,
+} from "@mui/icons-material";
 
 export function Intro() {
   return (
@@ -59,30 +64,55 @@ export function Intro() {
           </Box>
         </Stack>
         <Stack gap={3} order={{ xs: 1, md: 0 }}>
-          <Stack>
-            <Typography variant="h4">안녕하세요. 김인섭 입니다 👋</Typography>
+          <Stack gap={2}>
+            <Typography variant="h4" mb={1}>
+              안녕하세요. 김인섭 입니다 👋
+            </Typography>
             <Typography variant="body1">
-              I'm a full stack developer (React.js & Node.js) with a focus on
-              creating (and occasionally designing) exceptional digital
-              experiences that are fast, accessible, visually appealing, and
-              responsive. Even though I have been creating web applications for
-              over 7 years, I still love it as if it was something new.
+              2021년부터 웹 프론트엔드 개발자로 일하고 있습니다.
+            </Typography>
+            <Typography variant="body1">
+              일상에 가치를 더하는 서비스를 만드는 데 큰 보람을 느낍니다.
+            </Typography>
+            <Typography variant="body1">
+              단순히 화면을 구현하는 것을 넘어 사용자의 경험을 고려한 UI/UX
+              설계와 구현에 깊은 관심을 가지고 있습니다.
             </Typography>
           </Stack>
           <Stack direction="row" gap={0.5}>
-            <LocationOnOutlined />
+            <IconButton
+              component="a"
+              href="https://map.naver.com/p/search/성남시"
+              target="_blank"
+              sx={{ p: 0 }}
+            >
+              <LocationOnOutlined />
+            </IconButton>
             <Typography>경기도 성남시</Typography>
           </Stack>
-          <Stack direction="row">
+          <Stack direction="row" gap={2}>
             <IconButton
               LinkComponent="a"
               href="https://github.com/kiminseob"
               target="_blank"
+              sx={{ p: 0 }}
             >
               <GitHub />
             </IconButton>
-            <IconButton LinkComponent="a" href="mailto:kis6473@naver.com">
+            <IconButton
+              LinkComponent="a"
+              href="mailto:kis6473@naver.com"
+              sx={{ p: 0 }}
+            >
               <EmailOutlined />
+            </IconButton>
+            <IconButton
+              LinkComponent="a"
+              href="https://resume.inseop.pe.kr"
+              target="_blank"
+              sx={{ p: 0 }}
+            >
+              <FeedOutlined />
             </IconButton>
           </Stack>
         </Stack>

@@ -8,21 +8,32 @@ import {
   useColorScheme,
 } from "@mui/material";
 import { JeusPortfolio } from "./Portfolio/JeusPortfolio";
+import { TSPPortfolio } from "./Portfolio/TSPPortfolio";
 
 const works = [
   {
     portfolio: <JeusPortfolio />,
-    title: "JEUS Admin",
-    description: "어쩌고",
-    tags: ["React", "Typescript"],
+    title: "JEUS WebAdmin",
+    company: "Tmaxsoft",
+    description: "JEUS는 국내 시장 점유율 1위 애플리케이션 서버(WAS) 입니다.",
+    tags: ["React", "Typescript", "Emotion", "TanStack Query", "MobX"],
     link: "https://docs.tmaxsoft.com/ko/tmaxsoft_docs/main/jeus/index_jeus_9.1.html",
   },
   {
-    portfolio: <JeusPortfolio />,
-    title: "JEUS Admin2",
-    description: "어쩌고",
-    tags: ["React", "Typescript"],
-    link: "https://docs.tmaxsoft.com/ko/tmaxsoft_docs/main/jeus/index_jeus_9.1.html",
+    portfolio: <TSPPortfolio />,
+    title: "TSP",
+    company: "Tmaxsoft",
+    description:
+      "TSP(TmaxSoft SaaS Platform)는 티맥스소프트 상용 및 오픈소스 미들웨어 제품을 별도 설치 없이 서비스 형태로 이용할 수 있는 SaaS 플랫폼입니다.",
+    tags: [
+      "React",
+      "Typescript",
+      "Next.js",
+      "Recoil",
+      "Emotion",
+      "TanStack Query",
+    ],
+    link: "https://docs.tmaxsoft.com/ko/tmaxsoft_saas_platform/latest/what-is-tsp.html",
   },
 ];
 
@@ -38,7 +49,7 @@ export function Work() {
       })}
     >
       <Chip label="Work" />
-      <Typography>Some of the noteworthy projects I have built:</Typography>
+      <Typography>진행했던 주요 프로젝트 입니다.</Typography>
       <Stack gap="48px">
         {works.map((work, index) => (
           <Card key={work.title} {...work} index={index} />
@@ -48,16 +59,11 @@ export function Work() {
   );
 }
 
-type CardProps = {
-  portfolio: React.ReactNode;
+type CardProps = (typeof works)[number] & {
   index: number;
-  title: string;
-  description: string;
-  tags: string[];
-  link: string;
 };
 function Card(props: CardProps) {
-  const { portfolio, index, title, description, tags, link } = props;
+  const { portfolio, index, title, company, description, tags, link } = props;
   const { mode } = useColorScheme();
   const order = index % 2;
 
@@ -94,13 +100,24 @@ function Card(props: CardProps) {
           bgcolor: theme.color["background-color-04"],
         })}
       >
-        <Typography sx={(theme) => ({ color: theme.color["text-color-01"] })}>
-          {title}
-        </Typography>
+        <Stack direction="row" gap={2} alignItems="center">
+          <Typography
+            variant="h6"
+            sx={(theme) => ({ color: theme.color["text-color-01"] })}
+          >
+            {title}
+          </Typography>
+          <Typography
+            variant="subtitle2"
+            sx={(theme) => ({ color: theme.color["tmaxsoft-alive-blue"] })}
+          >
+            {company}
+          </Typography>
+        </Stack>
         <Typography sx={(theme) => ({ color: theme.color["icon-color-01"] })}>
           {description}
         </Typography>
-        <Stack direction="row" gap={1}>
+        <Stack direction="row" gap={1} flexWrap="wrap">
           {tags.map((v) => (
             <Chip key={v} label={v} />
           ))}

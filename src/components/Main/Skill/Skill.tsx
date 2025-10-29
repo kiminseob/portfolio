@@ -19,9 +19,7 @@ export function Skill() {
     >
       <Chip label="Skills" />
       <Box>
-        <Typography>
-          The skills, tools and technologies I am really good at:
-        </Typography>
+        <Typography>주요 웹 기술을 능숙하게 활용합니다.</Typography>
       </Box>
       <Stack direction="row" gap={10} flexWrap="wrap">
         <Stack alignItems="center">

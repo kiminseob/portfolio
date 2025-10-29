@@ -33,6 +33,7 @@ import "swiper/css/navigation";
 
 const slides = {
   jeus9: {
+    description: "",
     img: [
       {
         src: Jeus9Login,
@@ -63,11 +64,10 @@ const slides = {
         alt: "JEUS9 Monitoring Thread",
       },
     ],
-    description:
-      "JEUS9 is a web application that allows you to manage your JEUS9 server.",
   },
   previousVersion: {
     jeus21: {
+      description: "",
       img: [
         {
           src: Jeus21Login,
@@ -82,10 +82,10 @@ const slides = {
           alt: "JEUS21 Domain",
         },
       ],
-      description:
-        "JEUS21 is a web application that allows you to manage your JEUS21 server.",
     },
     "jeus8.5": {
+      description:
+        "old version의 JEUS WebAdmin 페이지 입니다. 해당 페이지를 참고하여 21, 9 version의 WebAdmin을 구현하였습니다.",
       img: [
         {
           src: Jeus85Login,
@@ -108,8 +108,6 @@ const slides = {
           alt: "JEUS8.5 App Install",
         },
       ],
-      description:
-        "JEUS8.5 is a web application that allows you to manage your JEUS8.5 server.",
     },
   },
 };
@@ -159,6 +157,9 @@ export function JeusPortfolio() {
       <Dialog open={isOpen} onClose={() => setIsOpen(false)} maxWidth="md">
         <DialogTitle>JEUS Admin</DialogTitle>
         <DialogContent>
+          <Typography variant="body2" mb={2}>
+            JEUS를 관리·운영할 수 있는 Admin 페이지 입니다.
+          </Typography>
           <Tabs value={value} onChange={handleChangeTab}>
             <Tab label="JEUS9" value="jeus9" />
             <Tab label="Previous Version" value="previousVersion" />

@@ -8,6 +8,7 @@ export const lightColor = {
   "icon-color-02": "#4B5563",
   "text-color-01": "#111827",
   "text-color-02": "#374151",
+  "tmaxsoft-alive-blue": "#0064FF",
 };
 
 export const darkColor = {
@@ -20,4 +21,5 @@ export const darkColor = {
   "icon-color-02": "#4B5563",
   "text-color-01": "#f9fafb",
   "text-color-02": "#e5e7eb",
+  "tmaxsoft-alive-blue": "#0064FF",
 };

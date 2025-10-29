@@ -11,7 +11,7 @@ export function Chip(props: ChipProps) {
       label={label}
       sx={(theme) => ({
         bgcolor: theme.color["background-color-02"],
-        width: 105,
+        minWidth: 105,
       })}
     />
   );
