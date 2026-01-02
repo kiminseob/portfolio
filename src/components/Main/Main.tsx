@@ -4,6 +4,7 @@ import { About } from "./About";
 import { Skill } from "./Skill";
 import { Experience } from "./Experience";
 import { Work } from "./Work";
+import { Project } from "./Project";
 
 export function Main() {
   return (
@@ -13,6 +14,7 @@ export function Main() {
       <Skill />
       <Experience />
       <Work />
+      <Project />
     </Stack>
   );
 }
