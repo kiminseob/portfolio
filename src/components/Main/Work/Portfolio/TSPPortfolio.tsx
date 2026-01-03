@@ -6,6 +6,7 @@ import {
   DialogTitle,
   Typography,
 } from "@mui/material";
+import { Collections } from "@mui/icons-material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import TSPPreview from "@/assets/img/work/tsp/tsp_preview.png";
@@ -59,30 +60,53 @@ export function TSPPortfolio() {
           cursor: "pointer",
           borderRadius: "8px",
           overflow: "hidden",
+          position: "relative",
           transition: "transform 0.4s ease",
           "&:hover": {
             transform: "scale(1.05)",
+            "& .overlay": {
+              opacity: 1,
+            },
           },
           boxShadow:
             "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
         }}
+        onClick={() => setIsOpen(true)}
       >
-        <img
-          src={TSPPreview}
-          width="100%"
-          onClick={() => setIsOpen(true)}
-          alt="TSP"
-        />
+        <img src={TSPPreview} width="100%" alt="TSP" style={{ display: "block" }} />
+        <Box
+          className="overlay"
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            bgcolor: "rgba(0, 0, 0, 0.6)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            opacity: 0,
+            transition: "opacity 0.3s ease",
+            color: "#fff",
+            gap: 1,
+          }}
+        >
+          <Collections sx={{ fontSize: 40 }} />
+          <Typography variant="subtitle1" fontWeight="bold">
+            View Gallery
+          </Typography>
+        </Box>
       </Box>
       <Dialog open={isOpen} onClose={() => setIsOpen(false)} maxWidth="md">
         <DialogTitle>TSP</DialogTitle>
         <DialogContent>
           <Typography variant="body2" mb={2}>
-            TSP는 클라우드 서비스 제공업체(CSP)의 Infrastructure as a
-            Service(IaaS)를 활용하여 CSP의 서버를 통해 구성한 VM Pool을 기반으로
-            웹 서버, 웹 애플리케이션 서버, 데이터베이스 서비스를 생성합니다.
-            이때 사용자 간 보안 유지를 위해 멀티 테넌트 형태로 구성되며, TSP
-            포털을 통해 편리한 운영 환경 및 서비스 관리가 가능합니다.
+            TSP는 복잡한 클라우드 인프라(Web, WAS, DB)를 클릭 몇 번으로 손쉽게 구축할
+            수 있는 SaaS 플랫폼입니다. <br />
+            멀티 테넌트 아키텍처를 통해 보안성을 확보했으며, 직관적인 포털을 통해
+            서비스 생성부터 모니터링까지 편리하게 관리할 수 있습니다.
           </Typography>
           <Swiper
             modules={[Pagination, Navigation]}

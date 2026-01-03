@@ -43,9 +43,9 @@ export function Experience() {
     >
       <Chip label="Experience" />
       <Typography>
-        Node.js 백엔드로 개발을 시작했지만 사용자 경험과 UI에 관심이 생기면서
-        자연스럽게 프론트엔드로 전향하여 2021년부터 티맥스소프트에서 React.js를
-        활용한 프론트엔드 개발을 진행하고 있습니다.
+        Node.js 백엔드로 커리어를 시작했으나 사용자 경험(UX) 구현에 더 큰 흥미를
+        느껴 프론트엔드로 전향했습니다. <br />
+        현재는 티맥스소프트에서 React.js 기반의 B2B 웹 솔루션을 개발하고 있습니다.
       </Typography>
       <Stack width={{ xs: "100%", md: "896px" }} gap={5}>
         {experiences.map((experience) => (

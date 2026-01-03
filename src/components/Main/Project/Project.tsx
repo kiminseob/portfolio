@@ -15,7 +15,7 @@ const projects = [
     title: "Support Cone",
     company: "Personal Project",
     description:
-      "Support Cone은 크리에이터들이 팬들로부터 직접적인 후원을 받을 수 있도록 돕는 서비스입니다. 간편한 결제 시스템과 크리에이터 페이지를 제공합니다.",
+      "Support Cone은 크리에이터들이 팬들로부터 직접적인 후원을 받을 수 있도록 돕는 서비스입니다. 간편한 QR 결제 방식과 크리에이터 페이지를 제공합니다.",
     tags: ["Next.js", "Typescript", "Tailwind CSS", "MongoDB"],
     link: "https://support-cone.vercel.app/",
   },

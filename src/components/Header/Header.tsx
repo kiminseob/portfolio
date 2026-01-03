@@ -23,7 +23,7 @@ import Seagull from "@/assets/animation/logo/seagull.gif";
 import Camel from "@/assets/animation/logo/camel.gif";
 
 const drawerWidth = 240;
-const navItems = ["Intro", "About", "Skill", "Experience", "Work"];
+const navItems = ["Intro", "About", "Skill", "Experience", "Work", "Project"];
 const logos = [Elepant, Turtle, Jellyfish, Seagull, Camel];
 
 export function Header() {

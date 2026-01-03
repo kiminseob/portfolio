@@ -5,6 +5,7 @@ import {
   DialogTitle,
   Typography,
 } from "@mui/material";
+import { Collections } from "@mui/icons-material";
 import { useState } from "react";
 import SupportConePreview from "@/assets/img/project/support_cone/support_cone_preview.png";
 import SupportConePricing from "@/assets/img/project/support_cone/support_cone_pricing.png";
@@ -34,9 +35,13 @@ export function SupportConePortfolio() {
           cursor: "pointer",
           borderRadius: "8px",
           overflow: "hidden",
+          position: "relative",
           transition: "transform 0.4s ease",
           "&:hover": {
             transform: "scale(1.05)",
+            "& .overlay": {
+              opacity: 1,
+            },
           },
           boxShadow:
             "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
@@ -49,6 +54,30 @@ export function SupportConePortfolio() {
           alt="Support Cone Preview"
           style={{ display: "block" }}
         />
+        <Box
+          className="overlay"
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            bgcolor: "rgba(0, 0, 0, 0.6)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            opacity: 0,
+            transition: "opacity 0.3s ease",
+            color: "#fff",
+            gap: 1,
+          }}
+        >
+          <Collections sx={{ fontSize: 40 }} />
+          <Typography variant="subtitle1" fontWeight="bold">
+            View Gallery
+          </Typography>
+        </Box>
       </Box>
       <Dialog
         open={isOpen}
@@ -59,7 +88,7 @@ export function SupportConePortfolio() {
         <DialogTitle>Support Cone</DialogTitle>
         <DialogContent>
           <Typography variant="body2" mb={2}>
-            'Buy Me a Coffee'와 비슷한 크리에이터 후원 서비스입니다.
+            'Buy Me a Coffee', 'Ko-fi' 및 국내의 '도네리카노'와 비슷한 크리에이터 후원 서비스입니다.
           </Typography>
           <Swiper
             modules={[Pagination, Navigation]}

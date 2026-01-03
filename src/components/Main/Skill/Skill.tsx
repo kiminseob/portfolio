@@ -1,12 +1,14 @@
 import { Chip } from "@/components/Common/Chip";
-import { Box, Stack, Typography } from "@mui/material";
-import Javascript from "@/assets/img/skill/javascript.svg?react";
+import { Box, Stack, Typography, useColorScheme } from "@mui/material";
 import Typescript from "@/assets/img/skill/typescript.svg?react";
 import React from "@/assets/img/skill/react.svg?react";
+import Nextjs from "@/assets/img/skill/nextjs.svg?react";
 import HTML from "@/assets/img/skill/html.svg?react";
 import CSS from "@/assets/img/skill/css.svg?react";
 
 export function Skill() {
+  const { mode } = useColorScheme();
+
   return (
     <Stack
       id="skill"
@@ -28,16 +30,24 @@ export function Skill() {
         flexWrap="wrap"
       >
         <Stack alignItems="center">
-          <Javascript width={64} height={64} />
-          <Typography variant="body2">Javascript</Typography>
-        </Stack>
-        <Stack alignItems="center">
           <Typescript width={64} height={64} />
           <Typography variant="body2">Typescript</Typography>
         </Stack>
         <Stack alignItems="center">
           <React width={64} height={64} />
           <Typography variant="body2">React</Typography>
+        </Stack>
+        <Stack alignItems="center">
+          <Box
+            sx={{
+              "& path": {
+                fill: mode === "dark" ? "#ffffff" : "#000000",
+              },
+            }}
+          >
+            <Nextjs width={120} height={64} />
+          </Box>
+          <Typography variant="body2">Next.js</Typography>
         </Stack>
         <Stack alignItems="center">
           <HTML width={64} height={64} />
