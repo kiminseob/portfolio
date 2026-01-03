@@ -71,7 +71,7 @@ export function Header() {
         <Typography sx={(theme) => ({ color: theme.color["icon-color-01"] })}>
           Switch Theme
         </Typography>
-        <IconButton onClick={toggleDarkMode}>
+        <IconButton onClick={toggleDarkMode} aria-label="Switch Theme">
           {mode === "dark" ? <DarkMode /> : <LightMode />}
         </IconButton>
       </Stack>
@@ -133,6 +133,7 @@ export function Header() {
             <IconButton
               onClick={toggleDarkMode}
               sx={{ display: { xs: "none", sm: "block" }, fontSize: "unset" }}
+              aria-label="Switch Theme"
             >
               {mode === "dark" ? <DarkMode /> : <LightMode />}
             </IconButton>

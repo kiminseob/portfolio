@@ -85,6 +85,7 @@ export function Intro() {
               href="https://map.naver.com/p/search/성남시"
               target="_blank"
               sx={{ p: 0 }}
+              aria-label="Location: Seongnam-si"
             >
               <LocationOnOutlined />
             </IconButton>
@@ -96,6 +97,7 @@ export function Intro() {
               href="https://github.com/kiminseob"
               target="_blank"
               sx={{ p: 0 }}
+              aria-label="GitHub Profile"
             >
               <GitHub />
             </IconButton>
@@ -103,6 +105,7 @@ export function Intro() {
               LinkComponent="a"
               href="mailto:kis6473@naver.com"
               sx={{ p: 0 }}
+              aria-label="Send Email"
             >
               <EmailOutlined />
             </IconButton>
@@ -111,6 +114,7 @@ export function Intro() {
               href="https://resume.inseop.pe.kr"
               target="_blank"
               sx={{ p: 0 }}
+              aria-label="View Resume"
             >
               <FeedOutlined />
             </IconButton>

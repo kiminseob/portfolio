@@ -110,7 +110,7 @@ function Card(props: CardProps) {
             <Chip key={v} label={v} />
           ))}
         </Stack>
-        <IconButton href={link} target="_blank">
+        <IconButton href={link} target="_blank" aria-label={`View ${title} Project`}>
           <OpenInNew
             sx={(theme) => ({ color: theme.color["icon-color-02"] })}
           />
