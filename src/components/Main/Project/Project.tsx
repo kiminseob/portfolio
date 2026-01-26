@@ -8,8 +8,18 @@ import {
   useColorScheme,
 } from "@mui/material";
 import { SupportConePortfolio } from "./Portfolio/SupportConePortfolio";
+import { NewYearSayPortfolio } from "./Portfolio/NewYearSayPortfolio";
 
 const projects = [
+  {
+    portfolio: <NewYearSayPortfolio />,
+    title: "New Year Say",
+    company: "Personal Project",
+    description:
+      "AI를 활용하여 상황과 대상에 맞는 새해 덕담을 생성해주는 서비스입니다. Google Gemini API를 활용하였으며, 생성된 덕담으로 카드를 꾸미고 공유할 수 있습니다.",
+    tags: ["Next.js", "Typescript", "Vercel", "Gemini API"],
+    link: "https://new-year-say.vercel.app/",
+  },
   {
     portfolio: <SupportConePortfolio />,
     title: "Support Cone",
@@ -110,7 +120,11 @@ function Card(props: CardProps) {
             <Chip key={v} label={v} />
           ))}
         </Stack>
-        <IconButton href={link} target="_blank" aria-label={`View ${title} Project`}>
+        <IconButton
+          href={link}
+          target="_blank"
+          aria-label={`View ${title} Project`}
+        >
           <OpenInNew
             sx={(theme) => ({ color: theme.color["icon-color-02"] })}
           />
